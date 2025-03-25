@@ -12,12 +12,13 @@ public class PieceMovement : MonoBehaviour
     public static int height = 6;
     public static int width = 4;
 
+    public SpawnPiece spawnPiece;
+
     private static Transform[,] grid = new Transform[width, height];
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
