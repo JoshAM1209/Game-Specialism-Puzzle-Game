@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8671174008238263764}
   - component: {fileID: 5879776928768410198}
+  - component: {fileID: 4958705004436669830}
   m_Layer: 0
   m_Name: Red Shroom (1)
   m_TagString: Untagged
@@ -84,6 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4958705004436669830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592637861804356384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7703a030e7e6349bbff1f518265423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piecePosX: 3
+  piecePosY: 13
 --- !u!1 &1006048206746855643
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +151,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPoint: {x: 0, y: 0, z: 0}
   fallSpeed: 0.8
+  spawnPiece: {fileID: 0}
+  gridManager: {fileID: 0}
+  mainPiece: {fileID: 7804385504240100541}
+  secondPiece: {fileID: 592637861804356384}
+  mainPiecePos: {fileID: 8900127995707382224}
+  secondPiecePos: {fileID: 4958705004436669830}
 --- !u!1 &7804385504240100541
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7114355073410834872}
   - component: {fileID: 8434001815109587047}
+  - component: {fileID: 8900127995707382224}
   m_Layer: 0
   m_Name: Red Shroom
   m_TagString: Untagged
@@ -220,3 +242,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8900127995707382224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804385504240100541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a6897649e4eb748aee6121f83577a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piecePosX: 3
+  piecePosY: 12
