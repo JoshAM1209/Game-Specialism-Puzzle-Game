@@ -21,6 +21,9 @@ public class PieceMovement : MonoBehaviour
     public MainPiecePos mainPiecePos;
     public SecondPiecePos secondPiecePos;
 
+    public LockedInPiece lockedInPiece1;
+    public LockedInPiece lockedInPiece2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +80,8 @@ public class PieceMovement : MonoBehaviour
                 secondPiecePos.piecePosY += 1;
                 AddToGrid();
                 this.enabled = false;
+                lockedInPiece1.enabled = true;
+                lockedInPiece2.enabled = true;
                 FindObjectOfType<SpawnPiece>().NewPiece();
             }
             else if (!ValidMove() || !ValidGrid())
@@ -86,6 +91,8 @@ public class PieceMovement : MonoBehaviour
                 secondPiecePos.piecePosY += 1;
                 AddToGrid();
                 this.enabled = false;
+                lockedInPiece1.enabled = true;
+                lockedInPiece2.enabled = true;
                 FindObjectOfType<SpawnPiece>().NewPiece();
             }
             timeCheck = Time.time;

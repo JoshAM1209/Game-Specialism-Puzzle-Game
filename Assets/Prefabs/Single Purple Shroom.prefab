@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2350263662099537720, guid: 4154dc32584bd204f8bb8e6aed81540e, type: 3}
       propertyPath: m_Name
-      value: Blue Shroom Variant
+      value: Single Purple Shroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350263662099537720, guid: 4154dc32584bd204f8bb8e6aed81540e, type: 3}
+      propertyPath: m_TagString
+      value: PurplePiece
       objectReference: {fileID: 0}
     - target: {fileID: 3437000193621869576, guid: 4154dc32584bd204f8bb8e6aed81540e, type: 3}
       propertyPath: m_LocalPosition.x

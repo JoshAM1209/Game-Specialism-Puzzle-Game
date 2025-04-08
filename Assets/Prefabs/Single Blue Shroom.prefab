@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8499187881056210229}
   m_Layer: 0
   m_Name: Single Blue Shroom
-  m_TagString: Untagged
+  m_TagString: BluePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

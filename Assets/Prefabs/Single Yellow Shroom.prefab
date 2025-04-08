@@ -54,7 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5508840318688274936, guid: 1187e3a2f9188b444a4dc3c29f26eae7, type: 3}
       propertyPath: m_Name
-      value: Blue Shroom Variant
+      value: Single Yellow Shroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508840318688274936, guid: 1187e3a2f9188b444a4dc3c29f26eae7, type: 3}
+      propertyPath: m_TagString
+      value: YellowPiece
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

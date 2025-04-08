@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961148892065784624, guid: 9cbf0150e067ce8449bcf8d4ef77071f, type: 3}
       propertyPath: m_Name
-      value: Blue Shroom Variant
+      value: Single Green Shroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 961148892065784624, guid: 9cbf0150e067ce8449bcf8d4ef77071f, type: 3}
+      propertyPath: m_TagString
+      value: GreenPiece
       objectReference: {fileID: 0}
     - target: {fileID: 8499187881056210229, guid: 9cbf0150e067ce8449bcf8d4ef77071f, type: 3}
       propertyPath: m_Sprite

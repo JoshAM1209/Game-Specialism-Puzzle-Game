@@ -58,6 +58,8 @@ MonoBehaviour:
   secondPiece: {fileID: 3517030903362699055}
   mainPiecePos: {fileID: 2490995352291173044}
   secondPiecePos: {fileID: 6714014413244924979}
+  lockedInPiece1: {fileID: 8668207281528527509}
+  lockedInPiece2: {fileID: 1527341045731477807}
 --- !u!1001 &5614091073111420929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,6 +119,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6989087485792035532, guid: 8daaaaeb20c0a9b43ab71f3243d79b15, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2490995352291173044}
+    - targetCorrespondingSourceObject: {fileID: 6989087485792035532, guid: 8daaaaeb20c0a9b43ab71f3243d79b15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8668207281528527509}
   m_SourcePrefab: {fileID: 100100000, guid: 8daaaaeb20c0a9b43ab71f3243d79b15, type: 3}
 --- !u!4 &2465726506841147901 stripped
 Transform:
@@ -142,6 +147,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piecePosX: 3
   piecePosY: 12
+--- !u!114 &8668207281528527509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3249197734128538317}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf6c973ea1d37a4b93f02632e7e83ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridManager: {fileID: 0}
+  pieceNo: 1
+  mainPiecePos: {fileID: 2490995352291173044}
+  secondPiecePos: {fileID: 0}
+  thisPiece: {fileID: 3249197734128538317}
 --- !u!1001 &5778464604288064995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,6 +223,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6989087485792035532, guid: 8daaaaeb20c0a9b43ab71f3243d79b15, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6714014413244924979}
+    - targetCorrespondingSourceObject: {fileID: 6989087485792035532, guid: 8daaaaeb20c0a9b43ab71f3243d79b15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1527341045731477807}
   m_SourcePrefab: {fileID: 100100000, guid: 8daaaaeb20c0a9b43ab71f3243d79b15, type: 3}
 --- !u!1 &3517030903362699055 stripped
 GameObject:
@@ -221,6 +246,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piecePosX: 3
   piecePosY: 13
+--- !u!114 &1527341045731477807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517030903362699055}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf6c973ea1d37a4b93f02632e7e83ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridManager: {fileID: 0}
+  pieceNo: 2
+  mainPiecePos: {fileID: 0}
+  secondPiecePos: {fileID: 6714014413244924979}
+  thisPiece: {fileID: 3517030903362699055}
 --- !u!4 &4602817179819533343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8057299444342159868, guid: 8daaaaeb20c0a9b43ab71f3243d79b15, type: 3}
