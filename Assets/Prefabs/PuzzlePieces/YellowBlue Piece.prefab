@@ -26,7 +26,7 @@ RectTransform:
   m_GameObject: {fileID: 8734107668942320039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 35, y: 35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6813041943658253165}
@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 178405645633140736, guid: 9cbf0150e067ce8449bcf8d4ef77071f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 178405645633140736, guid: 9cbf0150e067ce8449bcf8d4ef77071f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -160,10 +160,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
+  popCounter: {fileID: 0}
   pieceNo: 2
   mainPiecePos: {fileID: 0}
   secondPiecePos: {fileID: 4848255988830429226}
   thisPiece: {fileID: 6393453990504411108}
+  markedToPop: 0
 --- !u!1001 &8160070606898958181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,10 +261,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
+  popCounter: {fileID: 0}
   pieceNo: 1
   mainPiecePos: {fileID: 4876760369944155409}
   secondPiecePos: {fileID: 0}
   thisPiece: {fileID: 5882744148731236445}
+  markedToPop: 0
 --- !u!4 &6813041943658253165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3437000193621869576, guid: 4154dc32584bd204f8bb8e6aed81540e, type: 3}

@@ -26,7 +26,7 @@ RectTransform:
   m_GameObject: {fileID: 8344960398027922005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 35, y: 35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1431274116030068765}
@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4853798733574828744, guid: 1187e3a2f9188b444a4dc3c29f26eae7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4853798733574828744, guid: 1187e3a2f9188b444a4dc3c29f26eae7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -155,10 +155,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
+  popCounter: {fileID: 0}
   pieceNo: 2
   mainPiecePos: {fileID: 0}
   secondPiecePos: {fileID: 6607553508684605138}
   thisPiece: {fileID: 6153269387770620487}
+  markedToPop: 0
 --- !u!4 &6506488452248121719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4853798733574828744, guid: 1187e3a2f9188b444a4dc3c29f26eae7, type: 3}
@@ -264,7 +266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
+  popCounter: {fileID: 0}
   pieceNo: 1
   mainPiecePos: {fileID: 2093072342748653841}
   secondPiecePos: {fileID: 0}
   thisPiece: {fileID: 2086174981843755821}
+  markedToPop: 0
