@@ -73,49 +73,71 @@ public class LockedInPiece : MonoBehaviour
         PopCheck();
     }
 
-    void PopCheck()
+    void PopCheck(GameObject checkPiece)
     {
-        if (leftCheck >= 0)
+        LockedInPiece pieceChecking = checkPiece.GetComponent<LockedInPiece>();
+        GameObject nextCheck;
+        if (pieceChecking.leftCheck >= 0)
         {
-            if (gridManager.grid[leftCheck, thisPiecePosY] != null)
+            if (gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY] != null)
             {
-                if (gridManager.grid[leftCheck, thisPiecePosY].tag == thisPiece.tag)
+                if (gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY].CompareTag(this.gameObject.tag))
                 {
-                    markedToPop = true;
-                    AddToPop();
+                    if (pieceChecking.markedToPop != true)
+                    {
+                        pieceChecking.markedToPop = true;
+                        AddToPop(pieceChecking);
+                    }
+                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    PopCheck(nextCheck);
                 }
             }
         }
-        if (rightCheck <= 7)
+        if (pieceChecking.rightCheck <= 6)
         {
-            if (gridManager.grid[rightCheck, thisPiecePosY] != null)
+            if (gridManager.grid[pieceChecking.rightCheck, pieceChecking.thisPiecePosY] != null)
             {
-                if (gridManager.grid[rightCheck, thisPiecePosY].tag == thisPiece.tag)
+                if (gridManager.grid[pieceChecking.rightCheck, pieceChecking.thisPiecePosY].CompareTag(this.gameObject.tag))
                 {
-                    markedToPop = true;
-                    AddToPop();
+                    if (pieceChecking.markedToPop != true)
+                    {
+                        pieceChecking.markedToPop = true;
+                        AddToPop(pieceChecking);
+                    }
+                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    PopCheck(nextCheck);
                 }
             }
         }
-        if (upCheck <= 13)
+        if (pieceChecking.upCheck <= 13)
         {
-            if (gridManager.grid[thisPiecePosX, upCheck] != null)
+            if (gridManager.grid[pieceChecking.thisPiecePosX, pieceChecking.upCheck] != null)
             {
-                if (gridManager.grid[thisPiecePosX, upCheck].tag == thisPiece.tag)
+                if (gridManager.grid[pieceChecking.thisPiecePosX, pieceChecking.upCheck].CompareTag(this.gameObject.tag))
                 {
-                    markedToPop = true;
-                    AddToPop();
+                    if (pieceChecking.markedToPop != true)
+                    {
+                        pieceChecking.markedToPop = true;
+                        AddToPop(pieceChecking);
+                    }
+                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    PopCheck(nextCheck);
                 }
             }
         }
-        if (downCheck >= 0)
+        if (pieceChecking.downCheck >= 0)
         {
-            if (gridManager.grid[thisPiecePosX, downCheck] != null)
+            if (gridManager.grid[pieceChecking.thisPiecePosX, pieceChecking.downCheck] != null)
             {
-                if (gridManager.grid[thisPiecePosX, downCheck].tag == thisPiece.tag)
+                if (gridManager.grid[pieceChecking.thisPiecePosX, pieceChecking.downCheck].CompareTag(this.gameObject.tag))
                 {
-                    markedToPop = true;
-                    AddToPop();
+                    if (pieceChecking.markedToPop != true)
+                    {
+                        pieceChecking.markedToPop = true;
+                        AddToPop(pieceChecking);
+                    }
+                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    PopCheck(nextCheck);
                 }
             }
         }
