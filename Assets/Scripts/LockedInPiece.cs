@@ -11,17 +11,21 @@ public class LockedInPiece : MonoBehaviour
     public MainPiecePos mainPiecePos;
     public SecondPiecePos secondPiecePos;
     public GameObject thisPiece;
+    public int pieceColour; //0 = blue, 1 = green, 2 = purple, 3 = red, 4 = yellow
 
-    private int thisPiecePosX;
-    private int thisPiecePosY;
+    public int thisPiecePosX;
+    public int thisPiecePosY;
 
     public bool markedToPop = false;
 
-    private int leftCheck;
-    private int rightCheck;
-    private int upCheck;
-    private int downCheck;
-    
+    public List<GameObject> piecesToPop = new List<GameObject>();
+    public int popCount = 0;
+
+    public int leftCheck;
+    public int rightCheck;
+    public int upCheck;
+    public int downCheck;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +45,7 @@ public class LockedInPiece : MonoBehaviour
         rightCheck = thisPiecePosX + 1;
         upCheck = thisPiecePosY + 1;
         downCheck = thisPiecePosY - 1;
-
+        PopCheck(thisPiece);
     }
 
     // Update is called once per frame
@@ -59,62 +63,115 @@ public class LockedInPiece : MonoBehaviour
                 rightCheck = thisPiecePosX + 1;
                 upCheck = thisPiecePosY + 1;
                 downCheck = thisPiecePosY - 1;
-            }
-        }
-        PopCheck();
-    }
-
-    void PopCheck()
-    {
-        if (leftCheck >= 0)
-        {
-            if (gridManager.grid[leftCheck, thisPiecePosY] != null)
-            {
-                if (gridManager.grid[leftCheck, thisPiecePosY].tag == thisPiece.tag)
+                if (markedToPop == false)
                 {
-                    markedToPop = true;
-                    AddToPop();
+                    PopCheck(thisPiece);
                 }
-            }
-        }
-        if (rightCheck <= 7)
-        {
-            if (gridManager.grid[rightCheck, thisPiecePosY] != null)
-            {
-                if (gridManager.grid[rightCheck, thisPiecePosY].tag == thisPiece.tag)
+                if (popCount >= 4)
                 {
-                    markedToPop = true;
-                    AddToPop();
+                    RunPop();
                 }
-            }
-        }
-        if (upCheck <= 13)
-        {
-            if (gridManager.grid[thisPiecePosX, upCheck] != null)
-            {
-                if (gridManager.grid[thisPiecePosX, upCheck].tag == thisPiece.tag)
+                else
                 {
-                    markedToPop = true;
-                    AddToPop();
-                }
-            }
-        }
-        if (downCheck >= 0)
-        {
-            if (gridManager.grid[thisPiecePosX, downCheck] != null)
-            {
-                if (gridManager.grid[thisPiecePosX, downCheck].tag == thisPiece.tag)
-                {
-                    markedToPop = true;
-                    AddToPop();
+                    foreach (GameObject piece in piecesToPop)
+                    {
+                        LockedInPiece pieceChecking = piece.GetComponent<LockedInPiece>();
+                        pieceChecking.markedToPop = false;
+                    }
+                    piecesToPop.Clear();
+                    popCount = 0;
                 }
             }
         }
     }
 
-    void AddToPop()
+    void PopCheck(GameObject checkPiece)
     {
-        popCounter.popCount += 1;
-        //popCounter.piecesToPop.Add(GameObject.this);
+        LockedInPiece pieceChecking = checkPiece.GetComponent<LockedInPiece>();
+        GameObject nextCheck;
+        if (pieceChecking.leftCheck >= 0)
+        {
+            if (gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY] != null)
+            {
+                if (gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY].CompareTag(this.gameObject.tag))
+                {
+                    if (pieceChecking.markedToPop != true)
+                    {
+                        pieceChecking.markedToPop = true;
+                        AddToPop(pieceChecking);
+                    }
+                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    PopCheck(nextCheck);
+                }
+            }
+        }
+        if (pieceChecking.rightCheck <= 6)
+        {
+            if (gridManager.grid[pieceChecking.rightCheck, pieceChecking.thisPiecePosY] != null)
+            {
+                if (gridManager.grid[pieceChecking.rightCheck, pieceChecking.thisPiecePosY].CompareTag(this.gameObject.tag))
+                {
+                    if (pieceChecking.markedToPop != true)
+                    {
+                        pieceChecking.markedToPop = true;
+                        AddToPop(pieceChecking);
+                    }
+                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    PopCheck(nextCheck);
+                }
+            }
+        }
+        if (pieceChecking.upCheck <= 13)
+        {
+            if (gridManager.grid[pieceChecking.thisPiecePosX, pieceChecking.upCheck] != null)
+            {
+                if (gridManager.grid[pieceChecking.thisPiecePosX, pieceChecking.upCheck].CompareTag(this.gameObject.tag))
+                {
+                    if (pieceChecking.markedToPop != true)
+                    {
+                        pieceChecking.markedToPop = true;
+                        AddToPop(pieceChecking);
+                    }
+                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    PopCheck(nextCheck);
+                }
+            }
+        }
+        if (pieceChecking.downCheck >= 0)
+        {
+            if (gridManager.grid[pieceChecking.thisPiecePosX, pieceChecking.downCheck] != null)
+            {
+                if (gridManager.grid[pieceChecking.thisPiecePosX, pieceChecking.downCheck].CompareTag(this.gameObject.tag))
+                {
+                    if (pieceChecking.markedToPop != true)
+                    {
+                        pieceChecking.markedToPop = true;
+                        AddToPop(pieceChecking);
+                    }
+                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    PopCheck(nextCheck);
+                }
+            }
+        }
+    }
+
+    void AddToPop(LockedInPiece piecePop)
+    {
+        popCount += 1;
+        piecesToPop.Add(piecePop.gameObject);
+    }
+
+    void RunPop()
+    {
+        foreach (GameObject piece in piecesToPop)
+        {
+            LockedInPiece pieceChecking = piece.GetComponent<LockedInPiece>();
+            int popPosX = pieceChecking.thisPiecePosX;
+            int popPosY = pieceChecking.thisPiecePosY;
+            gridManager.grid[popPosX, popPosY] = null;
+            Destroy(piece.gameObject);
+        }
+        piecesToPop.Clear();
+        popCount = 0;
     }
 }
