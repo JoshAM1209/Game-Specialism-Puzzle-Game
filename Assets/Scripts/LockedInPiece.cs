@@ -50,7 +50,7 @@ public class LockedInPiece : MonoBehaviour
         rightCheck = thisPiecePosX + 1;
         upCheck = thisPiecePosY + 1;
         downCheck = thisPiecePosY - 1;
-        PopCheck(thisPiece);
+
     }
 
     // Update is called once per frame
@@ -68,29 +68,60 @@ public class LockedInPiece : MonoBehaviour
                 rightCheck = thisPiecePosX + 1;
                 upCheck = thisPiecePosY + 1;
                 downCheck = thisPiecePosY - 1;
-                if (markedToPop == false)
+            }
+        }
+        PopCheck();
+    }
+
+    void PopCheck()
+    {
+        if (leftCheck >= 0)
+        {
+            if (gridManager.grid[leftCheck, thisPiecePosY] != null)
+            {
+                if (gridManager.grid[leftCheck, thisPiecePosY].tag == thisPiece.tag)
                 {
-                    PopCheck(thisPiece);
+                    markedToPop = true;
+                    AddToPop();
                 }
-                if (popCount >= 4)
+            }
+        }
+        if (rightCheck <= 7)
+        {
+            if (gridManager.grid[rightCheck, thisPiecePosY] != null)
+            {
+                if (gridManager.grid[rightCheck, thisPiecePosY].tag == thisPiece.tag)
                 {
-                    RunPop();
+                    markedToPop = true;
+                    AddToPop();
                 }
-                else
+            }
+        }
+        if (upCheck <= 13)
+        {
+            if (gridManager.grid[thisPiecePosX, upCheck] != null)
+            {
+                if (gridManager.grid[thisPiecePosX, upCheck].tag == thisPiece.tag)
                 {
-                    foreach (GameObject piece in piecesToPop)
-                    {
-                        LockedInPiece pieceChecking = piece.GetComponent<LockedInPiece>();
-                        pieceChecking.markedToPop = false;
-                    }
-                    piecesToPop.Clear();
-                    popCount = 0;
+                    markedToPop = true;
+                    AddToPop();
+                }
+            }
+        }
+        if (downCheck >= 0)
+        {
+            if (gridManager.grid[thisPiecePosX, downCheck] != null)
+            {
+                if (gridManager.grid[thisPiecePosX, downCheck].tag == thisPiece.tag)
+                {
+                    markedToPop = true;
+                    AddToPop();
                 }
             }
         }
     }
 
-    void PopCheck(GameObject checkPiece)
+    void AddToPop()
     {
         LockedInPiece pieceChecking = checkPiece.GetComponent<LockedInPiece>();
         GameObject nextCheck;
