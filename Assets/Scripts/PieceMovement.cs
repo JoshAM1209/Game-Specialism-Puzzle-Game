@@ -8,21 +8,26 @@ public class PieceMovement : MonoBehaviour
 
     private float timeCheck;
     public float fallSpeed = 0.8f;
+    //these are used to adjust how fast the piece falls
 
     public static int height = 6;
     public static int width = 4;
+    //this stores the possible spaces a piece can move between, it is used when checking if a move is a valid one to make
 
     public SpawnPiece spawnPiece;
     public GridManager gridManager;
 
     public GameObject mainPiece;
     public GameObject secondPiece;
+    //these store both individual pieces in the current pair of pieces
 
     public MainPiecePos mainPiecePos;
     public SecondPiecePos secondPiecePos;
+    //these store the position scripts for both individual pieces
 
     public LockedInPiece lockedInPiece1;
     public LockedInPiece lockedInPiece2;
+    //these store the lockedinpiece script on both individual pieces
 
     // Start is called before the first frame update
     void Start()
@@ -33,19 +38,21 @@ public class PieceMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //all uses of keycode were intended to be replaced with unity input system
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += new Vector3(-1, 0, 0);
             mainPiecePos.piecePosX -= 1;
             secondPiecePos.piecePosX -= 1;
-            if (!ValidMove() || !ValidGrid())
+            //moves the piece and updates the values stored in position scripts to correlate
+            if (!ValidMove() || !ValidGrid()) //runs a check to see if the move is valid and if it isn't it reverts the piece back to it's previous position
             {
                 transform.position -= new Vector3(-1, 0, 0);
                 mainPiecePos.piecePosX += 1;
                 secondPiecePos.piecePosX += 1;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) //same as previous code for other directions
         {
             transform.position += new Vector3(1, 0, 0);
             mainPiecePos.piecePosX += 1;

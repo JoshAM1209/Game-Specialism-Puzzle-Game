@@ -20,6 +20,8 @@ public class NextPieceView : MonoBehaviour
         Destroy(currentShown);
         pieceToShow = spawnPiece.nextSpawn;
         currentShown = Instantiate(pieceToShow, transform.position, Quaternion.identity);
+        currentShown.GetComponent<LockedInPiece>().enabled = false;
+        //this is intended to show the next piece that will spawn but it does not currently work
 
     }
 }
