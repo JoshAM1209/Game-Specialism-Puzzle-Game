@@ -116,7 +116,7 @@ public class LockedInPiece : MonoBehaviour
                         pieceChecking.markedToPop = true;
                         AddToPop(pieceChecking);
                     }
-                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    nextCheck = gridManager.grid[pieceChecking.rightCheck, pieceChecking.thisPiecePosY];
                     PopCheck(nextCheck);
                 }
             }
@@ -132,7 +132,7 @@ public class LockedInPiece : MonoBehaviour
                         pieceChecking.markedToPop = true;
                         AddToPop(pieceChecking);
                     }
-                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    nextCheck = gridManager.grid[pieceChecking.upCheck, pieceChecking.thisPiecePosY];
                     PopCheck(nextCheck);
                 }
             }
@@ -148,7 +148,7 @@ public class LockedInPiece : MonoBehaviour
                         pieceChecking.markedToPop = true;
                         AddToPop(pieceChecking);
                     }
-                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    nextCheck = gridManager.grid[pieceChecking.downCheck, pieceChecking.thisPiecePosY];
                     PopCheck(nextCheck);
                 }
             }

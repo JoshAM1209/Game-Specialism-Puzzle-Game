@@ -142,11 +142,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
   popCounter: {fileID: 0}
-  pieceNo: 0
-  mainPiecePos: {fileID: 0}
+  pieceNo: 1
+  mainPiecePos: {fileID: 7155677890926657837}
   secondPiecePos: {fileID: 0}
-  thisPiece: {fileID: 0}
+  thisPiece: {fileID: 1649610415331068966}
+  pieceColour: 0
+  thisPiecePosX: 0
+  thisPiecePosY: 0
   markedToPop: 0
+  piecesToPop: []
+  popCount: 0
+  leftCheck: 0
+  rightCheck: 0
+  upCheck: 0
+  downCheck: 0
 --- !u!114 &7155677890926657837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,11 +257,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
   popCounter: {fileID: 0}
-  pieceNo: 0
+  pieceNo: 2
   mainPiecePos: {fileID: 0}
-  secondPiecePos: {fileID: 0}
-  thisPiece: {fileID: 0}
+  secondPiecePos: {fileID: 124801466397298501}
+  thisPiece: {fileID: 3636694719506742512}
+  pieceColour: 0
+  thisPiecePosX: 0
+  thisPiecePosY: 0
   markedToPop: 0
+  piecesToPop: []
+  popCount: 0
+  leftCheck: 0
+  rightCheck: 0
+  upCheck: 0
+  downCheck: 0
 --- !u!114 &124801466397298501
 MonoBehaviour:
   m_ObjectHideFlags: 0
