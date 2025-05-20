@@ -26,7 +26,7 @@ RectTransform:
   m_GameObject: {fileID: 2448751933670725359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 35, y: 35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3008880336447165709}
@@ -165,7 +165,16 @@ MonoBehaviour:
   mainPiecePos: {fileID: 0}
   secondPiecePos: {fileID: 608788059990253038}
   thisPiece: {fileID: 1876217907366959395}
+  pieceColour: 0
+  thisPiecePosX: 0
+  thisPiecePosY: 0
   markedToPop: 0
+  piecesToPop: []
+  popCount: 0
+  leftCheck: 0
+  rightCheck: 0
+  upCheck: 0
+  downCheck: 0
 --- !u!1001 &5048807443839069425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -266,7 +275,16 @@ MonoBehaviour:
   mainPiecePos: {fileID: 2449995692393156564}
   secondPiecePos: {fileID: 0}
   thisPiece: {fileID: 2805405666517388861}
+  pieceColour: 0
+  thisPiecePosX: 0
+  thisPiecePosY: 0
   markedToPop: 0
+  piecesToPop: []
+  popCount: 0
+  leftCheck: 0
+  rightCheck: 0
+  upCheck: 0
+  downCheck: 0
 --- !u!4 &3008880336447165709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8057299444342159868, guid: 8daaaaeb20c0a9b43ab71f3243d79b15, type: 3}
