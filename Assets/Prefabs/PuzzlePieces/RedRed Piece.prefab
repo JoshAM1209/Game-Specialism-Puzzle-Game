@@ -55,11 +55,11 @@ MonoBehaviour:
   spawnPiece: {fileID: 0}
   gridManager: {fileID: 0}
   mainPiece: {fileID: 5508840318688274936, guid: 1187e3a2f9188b444a4dc3c29f26eae7, type: 3}
-  secondPiece: {fileID: 0}
-  mainPiecePos: {fileID: 0}
-  secondPiecePos: {fileID: 0}
-  lockedInPiece1: {fileID: 0}
-  lockedInPiece2: {fileID: 0}
+  secondPiece: {fileID: 3636694719506742512}
+  mainPiecePos: {fileID: 7155677890926657837}
+  secondPiecePos: {fileID: 124801466397298501}
+  lockedInPiece1: {fileID: 3897685158671683347}
+  lockedInPiece2: {fileID: 4336709114418531236}
 --- !u!1001 &6527900572087248350
 PrefabInstance:
   m_ObjectHideFlags: 0
