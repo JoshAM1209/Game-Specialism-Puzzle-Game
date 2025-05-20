@@ -155,11 +155,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
+<<<<<<< HEAD
   popCounter: {fileID: 0}
+=======
+>>>>>>> Menu+Volume_Controls
   pieceNo: 1
   mainPiecePos: {fileID: 8960550846574473937}
   secondPiecePos: {fileID: 0}
   thisPiece: {fileID: 5187886168090390017}
+<<<<<<< HEAD
   pieceColour: 3
   thisPiecePosX: 0
   thisPiecePosY: 0
@@ -168,6 +172,8 @@ MonoBehaviour:
   popCount: 0
   pieceChecking: {fileID: 0}
   nextCheck: {fileID: 0}
+=======
+>>>>>>> Menu+Volume_Controls
 --- !u!4 &5246816530163103025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4853798733574828744, guid: 1187e3a2f9188b444a4dc3c29f26eae7, type: 3}
@@ -268,11 +274,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
+<<<<<<< HEAD
   popCounter: {fileID: 0}
+=======
+>>>>>>> Menu+Volume_Controls
   pieceNo: 2
   mainPiecePos: {fileID: 0}
   secondPiecePos: {fileID: 8330631576893931418}
   thisPiece: {fileID: 6059993539951777420}
+<<<<<<< HEAD
   pieceColour: 0
   thisPiecePosX: 0
   thisPiecePosY: 0
@@ -281,6 +291,8 @@ MonoBehaviour:
   popCount: 0
   pieceChecking: {fileID: 0}
   nextCheck: {fileID: 0}
+=======
+>>>>>>> Menu+Volume_Controls
 --- !u!4 &6572459578612026812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 178405645633140736, guid: 9cbf0150e067ce8449bcf8d4ef77071f, type: 3}

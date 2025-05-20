@@ -155,11 +155,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
+<<<<<<< HEAD
   popCounter: {fileID: 0}
+=======
+>>>>>>> Menu+Volume_Controls
   pieceNo: 2
   mainPiecePos: {fileID: 0}
   secondPiecePos: {fileID: 3194909785800893198}
   thisPiece: {fileID: 6305419331400505589}
+<<<<<<< HEAD
   pieceColour: 0
   thisPiecePosX: 0
   thisPiecePosY: 0
@@ -168,6 +172,8 @@ MonoBehaviour:
   popCount: 0
   pieceChecking: {fileID: 0}
   nextCheck: {fileID: 0}
+=======
+>>>>>>> Menu+Volume_Controls
 --- !u!4 &6390084877671613381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 178405645633140736, guid: 9cbf0150e067ce8449bcf8d4ef77071f, type: 3}
@@ -273,11 +279,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
+<<<<<<< HEAD
   popCounter: {fileID: 0}
+=======
+>>>>>>> Menu+Volume_Controls
   pieceNo: 1
   mainPiecePos: {fileID: 4671183480000150684}
   secondPiecePos: {fileID: 0}
   thisPiece: {fileID: 3299486517165195678}
+<<<<<<< HEAD
   pieceColour: 2
   thisPiecePosX: 0
   thisPiecePosY: 0
@@ -286,3 +296,5 @@ MonoBehaviour:
   popCount: 0
   pieceChecking: {fileID: 0}
   nextCheck: {fileID: 0}
+=======
+>>>>>>> Menu+Volume_Controls
