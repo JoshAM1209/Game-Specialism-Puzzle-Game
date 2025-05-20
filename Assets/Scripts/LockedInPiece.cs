@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-//this script is initially disabled but will become active once a piece has locked in to place
 public class LockedInPiece : MonoBehaviour
 {
     public GridManager gridManager;
@@ -12,24 +11,20 @@ public class LockedInPiece : MonoBehaviour
     public MainPiecePos mainPiecePos;
     public SecondPiecePos secondPiecePos;
     public GameObject thisPiece;
-    public int pieceColour; //0 = blue, 1 = green, 2 = purple, 3 = red, 4 = yellow (this is currently unused and exists as a backup to replace tags)
+    public int pieceColour; //0 = blue, 1 = green, 2 = purple, 3 = red, 4 = yellow
 
     public int thisPiecePosX;
     public int thisPiecePosY;
-    //stores the index for this piece's position in the grid
 
     public bool markedToPop = false;
-    //used to check if a piece has already been included in a match to prevent pieces from getting checked multiple times
 
     public List<GameObject> piecesToPop = new List<GameObject>();
     public int popCount = 0;
-    //all objects stored in the list are supposed to pop after a match is made which should occur when pop count is at least 4
 
     public int leftCheck;
     public int rightCheck;
     public int upCheck;
     public int downCheck;
-    //these are used to check what piece is in the adjacent positions
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +45,7 @@ public class LockedInPiece : MonoBehaviour
         rightCheck = thisPiecePosX + 1;
         upCheck = thisPiecePosY + 1;
         downCheck = thisPiecePosY - 1;
-
+        PopCheck(thisPiece);
     }
 
     // Update is called once per frame
@@ -68,9 +63,26 @@ public class LockedInPiece : MonoBehaviour
                 rightCheck = thisPiecePosX + 1;
                 upCheck = thisPiecePosY + 1;
                 downCheck = thisPiecePosY - 1;
+                if (markedToPop == false)
+                {
+                    PopCheck(thisPiece);
+                }
+                if (popCount >= 4)
+                {
+                    RunPop();
+                }
+                else
+                {
+                    foreach (GameObject piece in piecesToPop)
+                    {
+                        LockedInPiece pieceChecking = piece.GetComponent<LockedInPiece>();
+                        pieceChecking.markedToPop = false;
+                    }
+                    piecesToPop.Clear();
+                    popCount = 0;
+                }
             }
         }
-        PopCheck();
     }
 
     void PopCheck(GameObject checkPiece)
@@ -104,7 +116,7 @@ public class LockedInPiece : MonoBehaviour
                         pieceChecking.markedToPop = true;
                         AddToPop(pieceChecking);
                     }
-                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    nextCheck = gridManager.grid[pieceChecking.rightCheck, pieceChecking.thisPiecePosY];
                     PopCheck(nextCheck);
                 }
             }
@@ -120,7 +132,7 @@ public class LockedInPiece : MonoBehaviour
                         pieceChecking.markedToPop = true;
                         AddToPop(pieceChecking);
                     }
-                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    nextCheck = gridManager.grid[pieceChecking.upCheck, pieceChecking.thisPiecePosY];
                     PopCheck(nextCheck);
                 }
             }
@@ -136,7 +148,7 @@ public class LockedInPiece : MonoBehaviour
                         pieceChecking.markedToPop = true;
                         AddToPop(pieceChecking);
                     }
-                    nextCheck = gridManager.grid[pieceChecking.leftCheck, pieceChecking.thisPiecePosY];
+                    nextCheck = gridManager.grid[pieceChecking.downCheck, pieceChecking.thisPiecePosY];
                     PopCheck(nextCheck);
                 }
             }
