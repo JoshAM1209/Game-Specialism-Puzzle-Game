@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Josh-Test-Scene 1.unity
     guid: 08b89d806556195429f8a63f32409ff0
   - enabled: 1
+    path: Assets/Scenes/cutscene_test 2.unity
+    guid: f34686f83ca8d6946a9a5094737ea8ef
+  - enabled: 1
     path: Assets/Scenes/Josh-Test-Scene 2.unity
     guid: 003acd85d2f63c948af70f0f90dc0191
   - enabled: 1
